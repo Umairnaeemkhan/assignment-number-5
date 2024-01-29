@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting and Prime Check</title>
+</head>
+<body>
+
+    <script>
+        // Greet User Function
+        function greetUser(name) {
+            return "Hello, " + name + "! Welcome!";
+        }
+
+        // Prime Check Function
+        function isPrime(number) {
+            if (number <= 1) {
+                return false;
+            }
+
+            for (var i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        // Prompt for User's Name
+        var userName = prompt("Enter your name:");
+        var greeting = greetUser(userName);
+        alert(greeting);
+
+        // Prompt for a Number to Check Prime
+        var userNumber = parseInt(prompt("Enter a positive integer to check if it's prime:"));
+
+        if (isPrime(userNumber)) {
+            alert(userNumber + " is a prime number!");
+        } else {
+            alert(userNumber + " is not a prime number.");
+        }
+    </script>
+
+</body>
+</html>
